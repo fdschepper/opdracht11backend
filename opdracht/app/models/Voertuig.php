@@ -12,7 +12,8 @@ class Voertuig
     public function getInstructors()
     {
         $this->db->query("SELECT 
-        Voornaam, Tussenvoegsel, Achternaam, Mobiel, DatumInDienst, AantalSterren, Id
+        Voornaam, Tussenvoegsel, Achternaam, Mobiel, DatumInDienst, AantalSterren, Id, (SELECT COUNT(*) FROM Instructeur) AS count
+
         FROM Instructeur ORDER BY AantalSterren DESC;");
 
         $result = $this->db->resultSet();

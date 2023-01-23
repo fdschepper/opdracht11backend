@@ -11,7 +11,7 @@ class Voertuigen extends Controller
     public function index()
     {
         $result = $this->voertuigModel->getInstructors();
-        var_dump($result);
+        //var_dump($result);
 
         $rows = '';
         foreach ($result as $value) {
@@ -32,7 +32,8 @@ class Voertuigen extends Controller
 
         $data = [
             'title' => '<h1>Rijkste mensen ter wereld</h1>',
-            'rows' => $rows
+            'rows' => $rows,
+            'count' => $result[0]->count
         ];
 
         $this->view('voertuigen/index', $data);
@@ -41,7 +42,7 @@ class Voertuigen extends Controller
     public function inspect($id)
     {
         $result = $this->voertuigModel->getUsedVehicles($id);
-        var_dump($result);
+        //var_dump($result);
 
 
 
@@ -64,15 +65,30 @@ class Voertuigen extends Controller
             $isEmpty = false;
         }
 
-        $data = [
-            'title' => '<h1>Rijkste mensen ter wereld</h1>',
-            'rows' => $rows,
-            'isEmpty' => $isEmpty
-        ];
+
+        if (!$isEmpty) {
+            $data = [
+                'title' => '<h1>Rijkste mensen ter wereld</h1>',
+                'rows' => $rows,
+                'isEmpty' => $isEmpty,
+                'datumInDienst' => $result[0]->DatumInDienst,
+                'naam' => $result[0]->Voornaam . ' ' . $result[0]->Tussenvoegsel . ' ' . $result[0]->Achternaam,
+                'aantalSterren' => $result[0]->AantalSterren
+            ];
+        } else {
+            $data = [
+                'title' => '<h1>Rijkste mensen ter wereld</h1>',
+                'rows' => $rows,
+                'isEmpty' => $isEmpty,
+            ];
+        }
 
 
 
-        var_dump($data);
+
+
+
+        //var_dump($data);
 
         $this->view('voertuigen/inspect', $data);
     }

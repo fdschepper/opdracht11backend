@@ -1,5 +1,6 @@
 <?php require(APPROOT . '\views\includes\head.php') ?>
 <h3><?= $data['title'] ?></h3>
+<h3> aantal instructeurs: <?= $data['count'] ?></h3>
 
 <table border='1'>
     <thead>

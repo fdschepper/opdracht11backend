@@ -1,9 +1,13 @@
 <?php require(APPROOT . '\views\includes\head.php') ?>
 <h3><?= $data['title'] ?></h3>
 
-<?php
+<?php if (!$data['isEmpty']) {
+    echo "<h3>naam: " . $data['naam'] . "</h3>
+    <h3>datum in dienst: " . $data['datumInDienst'] . "</h3>
+    <h3>aantal sterren: " . $data['aantalSterren'] . "</h3>";
+} ?>
 
-?>
+
 <table border='1'>
     <thead>
         <th>Type voertuig</th>
