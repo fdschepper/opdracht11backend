@@ -9,7 +9,7 @@ define('DB_NAME', 'opdracht11be');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // De URL van deze site
-define('URLROOT', 'http://opdracht11be.com/');
+define('URLROOT', 'http://opdracht11be.com');
 
 // Naam van de site
 define('SITENAME', 'MVC-2109B');
