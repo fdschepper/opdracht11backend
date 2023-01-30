@@ -2,6 +2,7 @@
 
 class Voertuigen extends Controller
 {
+    private $voertuigModel;
 
     public function __construct()
     {
@@ -31,7 +32,7 @@ class Voertuigen extends Controller
 
 
         $data = [
-            'title' => '<h1>Rijkste mensen ter wereld</h1>',
+            'title' => '<h1>Voertuigen</h1>',
             'rows' => $rows,
             'count' => $result[0]->count
         ];
@@ -68,7 +69,7 @@ class Voertuigen extends Controller
 
         if (!$isEmpty) {
             $data = [
-                'title' => '<h1>Rijkste mensen ter wereld</h1>',
+                'title' => '<h1>Voertuigen</h1>',
                 'rows' => $rows,
                 'isEmpty' => $isEmpty,
                 'datumInDienst' => $result[0]->DatumInDienst,
@@ -77,7 +78,7 @@ class Voertuigen extends Controller
             ];
         } else {
             $data = [
-                'title' => '<h1>Rijkste mensen ter wereld</h1>',
+                'title' => '<h1>Voertuigen</h1>',
                 'rows' => $rows,
                 'isEmpty' => $isEmpty,
             ];

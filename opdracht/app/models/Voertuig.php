@@ -29,6 +29,7 @@ class Voertuig
         JOIN Voertuig ON VoertuigInstructeur.VoertuigId = Voertuig.Id
         JOIN TypeVoertuig ON Voertuig.TypeVoertuigId = TypeVoertuig.Id
         WHERE instructeur.Id = :id
+        ORDER BY TypeVoertuig.Rijbewijscategorie ASC
               
         ");
 
